@@ -1,0 +1,9 @@
+;; Detection Query — SSH Brute-Force Characterization
+index=linux_logs sourcetype=syslog process=sshd "Failed password"
+| stats count by src_ip, user
+| sort - count
+
+;; Follow-up — confirm distributed (botnet) vs. single-source pattern
+index=linux_logs sourcetype=syslog process=sshd "Failed password"
+| stats dc(src_ip) as unique_sources, count as total_attempts by user
+| where unique_sources > 10
