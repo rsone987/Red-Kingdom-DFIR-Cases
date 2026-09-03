@@ -1,0 +1,8 @@
+;; Detection Query — Anomalous DB Access by a Non-DB Role
+index=db_logs sourcetype=mysql_audit user=jdoe_frontend
+| stats count by query_type, db_name
+| where db_name="prod_customers"
+
+;; Follow-up — VPN source correlation for the flagged account
+index=vpn_logs user=jdoe_frontend
+| stats latest(src_ip) as last_src_ip, latest(_time) as last_seen by user
