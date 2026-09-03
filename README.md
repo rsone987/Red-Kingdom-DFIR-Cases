@@ -1,40 +1,52 @@
-Red Kingdom DFIR Cases 🛡️⚔️
-Advanced Digital Forensics, Incident Response & Threat Hunting Repository
-Overview
-Welcome to Red Kingdom DFIR Cases. This repository serves as a practical, high-impact demonstration of advanced Digital Forensics, Incident Response (DFIR), and Detection Engineering capabilities. It documents real-world operational methodologies, forensic analysis workflows, and detection logic built to identify, isolate, and eradicate complex adversary behavior.
-Designed with enterprise-grade rigor, this showcase highlights technical precision, deep system-level understanding, and an analytical mindset focused on dissecting modern attack vectors.
-Technical Core & Core Competencies
-Domain
-Key Skills & Methodologies
-Tools & Technologies
- 
-Digital Forensics
-Memory Forensics, Disk Image Analysis, Registry & Artifact Analysis, Timeline Analysis
-FTK Importer, Volatility 3, Autopsy, Eric Zimmerman Tools (EZTools)
-Incident Response
-Containment Strategies, Root Cause Analysis, Malware Triage, Living-off-the-Land (LotL) Detection
-Wireshark, Sysmon, Event Log Explorer, KAPE
-SIEM & Detection Engineering
-Log Centralization, Rule Authoring (SPL/YARA/Sigma), Threat Correlation, Alert Fine-Tuning
-Splunk, ELK Stack, Sigma Rules, YARA
-Network & Systems Security
-Network Segmentation, Traffic Analysis, System Hardening, Log Forwarding Architectures
-Debian Linux, VirtualBox, UFW / IPTables, Ansible
+# Red Kingdom DFIR Cases 🛡️⚔️
 
-Repository Structure & Investigation Workflow
-Each case in this repository is structured systematically to reflect professional SOC and DFIR standards:
-Executive Summary & Incident Overview: High-level breakdown of the breach, scope, and business impact.
-Forensic Artifact Collection: Verification and analysis of memory dumps, event logs (Windows/Linux), and network captures.
-Timeline of Events: Precise chronological mapping of adversary tactics, techniques, and procedures (TTPs).
-Detection & SIEM Logic: Production-ready queries (Splunk SPL / Sigma) developed to detect the specific threat vector.
-Response & Remediation: Concrete containment steps, eradication guidance, and hardening recommendations.
-Engineering Philosophy & Standards
-Security operations are built on clarity, speed, and evidence-backed conclusions. My operational approach relies on:
-Evidence-Driven Analysis: No assumptions—every conclusion is corroborated by raw forensic artifacts and structured log sources.
-Repeatable & Automated Defense: Converting incident insights into actionable detection rules and automated deployment code (Infrastructure as Code).
-Production Quality Documentation: Clear, concise reporting structured for both executive briefings and technical peer review.
-Author & Connect
-GitHub: rsone987
-Rami Smadi
-Demonstrating relentless defense, technical excellence, and battle-tested incident response skills.
+> **Advanced Digital Forensics, Incident Response & Threat Hunting Portfolio**
 
+Welcome to **Red Kingdom DFIR Cases**. This repository serves as an operational showcase of advanced Digital Forensics, Incident Response (DFIR), and Detection Engineering capabilities. It documents real-world methodologies, forensic analysis workflows, and detection logic designed to identify, isolate, and eradicate complex threats across modern enterprise environments.
+
+---
+
+## 🎯 Executive Overview & Purpose
+
+This repository is built with production-grade security standards. It reflects an evidence-driven operational mindset—combining deep system-level artifact analysis with proactive threat detection and infrastructure automation. 
+
+Every case documented here represents a structured, end-to-end investigation following strict incident response lifecycles (NIST / SANS Frameworks).
+
+---
+
+## 🛠️ Core Competencies & Technical Stack
+
+| Security Domain | Methodologies & Analytical Focus | Key Tools & Frameworks |
+| :--- | :--- | :--- |
+| **Digital Forensics (DFIR)** | Memory Analysis, Disk Image Forensics, Windows/Linux Artifact Parsing, Timeline Reconstruction | Volatility 3, FTK Importer, Autopsy, Eric Zimmerman Tools (EZTools), KAPE |
+| **Incident Response & Triage** | Root Cause Analysis, Living-off-the-Land (LotL) Detection, Containment & Eradication | Wireshark, Sysmon, Event Log Explorer, Brim, CyberChef |
+| **SIEM & Detection Engineering** | Centralized Logging, Threat Hunting, Rule Authoring (SPL/Sigma/YARA), Alert Tuning | Splunk (Enterprise/Universal Forwarder), ELK Stack, Sigma, YARA |
+| **Infrastructure & Security Ops** | Hardened Architectures, Network Segmentation, Log Pipeline Engineering, IaC Automation | Debian Linux, VirtualBox, UFW / IPTables, Ansible |
+
+---
+
+## 📁 Standard Case Investigation Framework
+
+To maintain institutional quality across all investigations, every case in this repository follows a standardized structure:
+
+1. **Executive Summary:** High-level narrative detailing the breach scope, initial access vector, and overall business impact.
+2. **Artifact Collection & Forensics:** Rigorous extraction and verification of volatile memory, system event logs, and network traffic.
+3. **Attack Timeline (MITRE ATT&CK Mapping):** Chronological mapping of adversary TTPs against established frameworks.
+4. **Detection Engineering & SIEM Logic:** Production-ready detection logic (Splunk SPL / Sigma queries) written to detect the threat in real-time.
+5. **Remediation & Lessons Learned:** Actionable recommendations for incident containment, system hardening, and prevention.
+
+---
+
+## 🧠 Engineering Philosophy
+
+* **Evidence over Assumptions:** Every conclusion must be backed by raw, verifiable forensic evidence.
+* **Proactive Security:** Finding the attack is only half the job; engineering automated detection logic stops it from happening again.
+* **Clear & Decisive Documentation:** Professional technical writing that bridges the gap between high-level executive decision-making and deep technical execution.
+
+---
+
+## 👨‍💻 Connect & Contact
+
+* **GitHub:** [rsone987](https://github.com/rsone987)
+
+*Designed, built, and defended with technical precision.*
