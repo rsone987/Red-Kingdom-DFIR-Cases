@@ -1,0 +1,10 @@
+;; Detection Query — Reboot Time-of-Day Pattern Analysis
+index=server_logs host=srv-datacenter-14 sourcetype=syslog
+| eval hour=strftime(_time, "%H")
+| stats count by hour
+| sort - count
+
+;; Follow-up — isolate reboot events specifically
+index=server_logs host=srv-datacenter-14 sourcetype=syslog event_type=reboot
+| table _time, hour, event_type
+| sort _time
