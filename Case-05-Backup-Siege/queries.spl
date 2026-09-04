@@ -1,0 +1,8 @@
+;; Detection Query — Anomalous Backup Repository Activity
+index=backup_logs sourcetype=backup_audit user=svc_backup
+| stats count by action, repo_name
+| where action="delete" OR action="overwrite"
+
+;; Follow-up — service account privilege drift over time
+index=backup_logs sourcetype=backup_audit user=svc_backup action="grant_change"
+| table _time, granted_privilege, changed_by
