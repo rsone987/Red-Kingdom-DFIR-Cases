@@ -1,0 +1,10 @@
+;; Detection Query — Abnormal Kerberos Ticket Lifetime / Encryption (Golden Ticket Indicator)
+index=win_logs (EventCode=4768 OR EventCode=4769)
+| eval lifetime_hours = Ticket_Lifetime / 3600
+| where lifetime_hours > 10
+| table _time, Account_Name, Ticket_Encryption_Type, lifetime_hours, Client_Address
+
+;; Follow-up — impossible-travel style check for the same admin account across hosts
+index=win_logs EventCode=4624 Account_Name="*Admin*"
+| stats dc(Computer) as distinct_hosts, values(Computer) as hosts by Account_Name, _time
+| where distinct_hosts > 1
