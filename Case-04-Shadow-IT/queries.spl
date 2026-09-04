@@ -1,0 +1,5 @@
+;; Detection Query — Traffic From Unregistered/Unknown IPs
+index=asset_inventory
+NOT [ | inputlookup known_assets.csv | fields ip ]
+| dedup ip
+| table ip, first_seen, last_seen
