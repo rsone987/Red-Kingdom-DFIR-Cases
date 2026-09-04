@@ -1,0 +1,8 @@
+;; Detection Query — Legitimate Service Process Spawning Unexpected Children
+index=host_logs sourcetype=auditd parent_process="nginx"
+NOT child_process IN ("nginx", "sh -c 'nginx -s reload'")
+| table _time, parent_process, child_process, user
+
+;; Follow-up — outbound connections attributed to a service account that should never initiate them
+index=netflow src_process="nginx" dest_port!=443 dest_port!=80
+| stats count by dest_ip, dest_port
