@@ -1,0 +1,22 @@
+#!/usr/bin/env bpftrace
+// Short-Lived Process + Outbound Connection Tracer - The Red Kingdom Standard
+// Catches processes that execute, connect, and exit faster than polling tools can sample
+
+tracepoint:syscalls:sys_enter_execve
+{
+    @start[pid] = nsecs;
+    printf("%s [%d] execve: %s\n", comm, pid, str(args->filename));
+}
+
+tracepoint:syscalls:sys_enter_connect
+{
+    printf("%s [%d] connect()\n", comm, pid);
+}
+
+tracepoint:sched:sched_process_exit
+/@start[pid]/
+{
+    $lifetime_ms = (nsecs - @start[pid]) / 1000000;
+    printf("%s [%d] exited after %d ms\n", comm, pid, $lifetime_ms);
+    delete(@start[pid]);
+}

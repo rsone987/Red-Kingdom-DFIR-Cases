@@ -1,0 +1,7 @@
+;; Detection Query — Network Flow Bursts With No Matching Host Process Log
+index=netflow dest_ip="198.51.100.23"
+| stats count by src_ip, _time
+| join type=left src_ip
+    [ search index=host_logs sourcetype=process_monitor
+      | stats count as process_hits by src_ip ]
+| where isnull(process_hits)
