@@ -1,0 +1,6 @@
+;; Detection Query — Host-Level File Changes with Container-Origin Process Ancestry
+index=host_logs sourcetype=auditd action=file_write path="/usr/*" OR path="/etc/*"
+| join ppid
+    [ search index=container_logs
+      | table pid, container_id, container_name ]
+| table _time, path, pid, ppid, container_id, container_name
