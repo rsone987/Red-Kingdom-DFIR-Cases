@@ -1,0 +1,7 @@
+;; Detection Query — Archive Creation + Egress With No Matching Physical/Remote Presence
+index=file_logs action=archive_create
+| join type=left user
+    [ search index=badge_logs OR index=vpn_logs
+      | stats latest(_time) as last_presence by user ]
+| where last_presence < relative_time(_time, "-4h")
+| table _time, user, host, archive_name, last_presence
