@@ -1,0 +1,5 @@
+;; Detection Query — High-Volume, High-Entropy Subdomain Query Pattern (DNS Tunneling Indicator)
+index=dns_logs
+| eval subdomain_len=len(mvindex(split(query, "."), 0))
+| stats count, avg(subdomain_len) as avg_len, dc(query) as unique_subdomains by src_host, query_domain
+| where count > 500 AND avg_len > 20 AND unique_subdomains > 400
