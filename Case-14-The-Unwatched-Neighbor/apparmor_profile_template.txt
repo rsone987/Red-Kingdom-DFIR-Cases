@@ -1,0 +1,21 @@
+# AppArmor Baseline Profile Template - The Red Kingdom Standard
+# Copy to /etc/apparmor.d/<service-name> and adjust paths per service
+
+#include <tunables/global>
+
+profile <service-name> flags=(enforce) {
+  #include <abstractions/base>
+
+  # Allow read access only to this service's own directory
+  /opt/<service-name>/** r,
+
+  # Allow write access only to this service's own log directory
+  /var/log/<service-name>/** w,
+
+  # Explicitly deny access to other services' secrets
+  deny /etc/app-secrets/** rwx,
+  deny /opt/**/db_credentials.conf rwx,
+
+  # Network access as required, nothing broader
+  network inet stream,
+}

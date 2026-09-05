@@ -1,0 +1,5 @@
+;; Detection Query — Process Reading Files Outside Its Expected Working Directory
+index=host_logs sourcetype=auditd action=file_read
+| eval expected_prefix="/opt/" . process_name
+| where NOT like(path, expected_prefix . "%")
+| table _time, process_name, path, user
