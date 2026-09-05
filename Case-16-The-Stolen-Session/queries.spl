@@ -1,0 +1,4 @@
+;; Detection Query — Single Session ID Active Across Multiple Device Fingerprints
+index=idp_logs
+| stats dc(device_fingerprint) as device_count, values(src_country) as countries by session_id
+| where device_count > 1
