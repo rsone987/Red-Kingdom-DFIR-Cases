@@ -1,0 +1,5 @@
+;; Detection Query — Look-Alike Sender Domains With MFA/Verification-Themed Subject Lines
+index=mail_audit_logs
+| where sender_domain!="company.com"
+| stats count by sender_domain, subject, src_ip
+| where match(subject, "(?i)mfa|verify|re-authenticate|security\s*alert")
