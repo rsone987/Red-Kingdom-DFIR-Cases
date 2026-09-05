@@ -1,0 +1,6 @@
+;; Detection Query — Unscheduled Reboot With No Preceding Maintenance Ticket
+index=host_logs sourcetype=syslog event_type="reboot"
+| join type=left host
+    [ search index=maintenance_tickets status="approved" | table host, scheduled_window ]
+| where isnull(scheduled_window)
+| table _time, host, event_type
