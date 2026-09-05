@@ -1,0 +1,4 @@
+;; Detection Query — New Mailbox Forwarding Rules to External Domains
+index=mail_audit_logs action="New-InboxRule" OR action="Set-InboxRule"
+| where match(forward_to, "@(?!company\.com)")
+| table _time, user, rule_name, forward_to, src_ip
