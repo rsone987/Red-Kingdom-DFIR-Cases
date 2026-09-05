@@ -1,0 +1,9 @@
+;; Detection Query — Volumetric, Distributed-Source Traffic Pattern (DDoS Indicator)
+index=router_logs sourcetype="linux:firewall"
+| stats count by src_ip
+| sort - count
+| head 20
+
+;; Follow-up — confirm no single source dominates (rules out a targeted brute-force pattern)
+index=router_logs sourcetype="linux:firewall"
+| stats dc(src_ip) as unique_sources, sum(bytes) as total_bytes
