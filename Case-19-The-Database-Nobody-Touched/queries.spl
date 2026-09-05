@@ -1,0 +1,6 @@
+;; Detection Query — WAF-Flagged Requests Correlated With App-Identity Query Spikes
+index=waf_logs status=200 uri="/search"
+| regex query_params="(?i)union\s+select|--|;\s*drop"
+| join type=inner _time
+    [ search index=db_audit_logs user="svc_webapp" | stats count by _time ]
+| table _time, src_ip, query_params, count
