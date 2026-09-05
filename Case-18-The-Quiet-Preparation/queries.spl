@@ -1,0 +1,5 @@
+;; Detection Query — Shadow-Copy/Backup Discovery Commands Across Multiple Hosts
+index=win_logs sourcetype=security_events
+| search CommandLine="*vssadmin*" OR CommandLine="*shadowcopy*" OR CommandLine="*wbadmin*"
+| stats dc(host) as hosts_touched, values(host) as host_list by user
+| where hosts_touched > 1
