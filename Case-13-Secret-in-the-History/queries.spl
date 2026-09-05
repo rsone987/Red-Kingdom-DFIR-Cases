@@ -1,0 +1,6 @@
+;; Detection Query — API Activity From Credentials Older Than Rotation Policy
+index=cloud_audit_logs eventType=ApiCall
+| lookup key_inventory.csv access_key OUTPUT create_date
+| eval key_age_days = round((now() - strptime(create_date, "%Y-%m-%d")) / 86400)
+| where key_age_days > 90
+| table _time, access_key, key_age_days, source_ip
