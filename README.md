@@ -1,14 +1,10 @@
 # 🛡️ The Red Kingdom | DFIR & Threat Hunting Case Files
 
-A self-directed, scenario-based DFIR case study series — realistic investigations built to practice
-and demonstrate incident response methodology end-to-end: detection, root-cause analysis, and
-remediation, written up the way a working SOC/DFIR analyst would document a real incident.
+This series of case studies in Digital Incident Response and Forensics (DFIR) is based on realistic scenarios and provides comprehensive training in incident response methodology: detection, root cause analysis, and remediation. The case studies are written in a style that mimics the documentation of a real incident by an SOC/DFIR analyst.
 
-Each case is set against **The Red Kingdom**, a fictional enterprise environment, with **Rami** as
-the investigator. The scenarios are constructed, but the investigative methodology, the tools, and the
-detection logic are the same ones used throughout this author's real hands-on lab work (see the
-[Sentinel SOC](https://github.com/rsone987) project). Every case includes the false leads and dead
-ends that came before the actual answer, not just the clean resolution.
+Each case takes place in the "Red Kingdom" environment, a fictional corporate setting, but all the incidents presented are real and have actually occurred. However, some information has been altered to protect the companies and individuals within the original companies.
+
+Rami (a real person) acts as the investigator. The scenarios are fictionalized, but the investigative methodology, tools, and detection logic are the same as those used in the author's practical work (see the Sentinel SOC project). Each case includes the lead-offs and dead ends that preceded the final resolution, not just the resolution itself.
 
 ## 🏢 Simulated Environment Profile
 * **Enterprise:** The Red Kingdom (Global Infrastructure & Hybrid Workforce) — fictional
