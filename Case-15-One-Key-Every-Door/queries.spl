@@ -1,0 +1,5 @@
+;; Detection Query — Single Account Authenticating Across an Unusual Number of Hosts
+index=win_logs EventCode=4624 LogonType=3 Account_Name="Administrator"
+| bucket _time span=1h
+| stats dc(Computer) as hosts_touched, values(Computer) as host_list by src_ip, _time
+| where hosts_touched > 5
