@@ -18,7 +18,7 @@ Rami (a real person) acts as the investigator. The scenarios are fictionalized, 
 
 Everything below this point is the constructed Red Kingdom case study series. For actual
 troubleshooting and incidents from the real Sentinel SOC lab build, see **[/Real-Incidents](./Real-Incidents/)** —
-a separate, clearly-labeled section kept entirely apart from the fictional archive.
+a separate, clearly-labeled section kept entirely apart from the  archive.
 
 ---
 
