@@ -1,0 +1,5 @@
+;; Detection Query — Cross-Host Authentication Chains Within a Short Time Window
+index=win_logs EventCode=4624 LogonType=3
+| bucket _time span=15m
+| stats values(dest_host) as next_hop, values(Account_Name) as accounts by src_host, _time
+| where mvcount(next_hop) > 1
