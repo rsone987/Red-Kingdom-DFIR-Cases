@@ -1,0 +1,4 @@
+;; Detection Query — Office Applications Spawning PowerShell
+index=sysmon EventCode=1
+| search parent_process IN ("WINWORD.EXE", "EXCEL.EXE", "OUTLOOK.EXE") process="powershell.exe"
+| table _time, host, user, parent_process, CommandLine
