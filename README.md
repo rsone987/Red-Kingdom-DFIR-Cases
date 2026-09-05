@@ -18,9 +18,17 @@ ends that came before the actual answer, not just the clean resolution.
 
 ---
 
+## ✅ Looking for real, non-fictional incidents instead?
+
+Everything below this point is the constructed Red Kingdom case study series. For actual
+troubleshooting and incidents from the real Sentinel SOC lab build, see **[/Real-Incidents](./Real-Incidents/)** —
+a separate, clearly-labeled section kept entirely apart from the fictional archive.
+
+---
+
 ## 📊 Series Overview
 
-**23 cases resolved** — 🟢 1 Beginner · 🟡 5 Intermediate · 🔴 14 Advanced · ⚫ 3 Expert
+**29 cases resolved** — 🟢 1 Beginner · 🟡 5 Intermediate · 🔴 18 Advanced · ⚫ 5 Expert
 
 ---
 
@@ -57,6 +65,10 @@ ends that came before the actual answer, not just the clean resolution.
 | **#19** | [The Database Nobody Touched](./Case-19-The-Database-Nobody-Touched/) | WAF Logs, DB Audit Logs, Splunk |
 | **#22** | [The DNS That Spoke Too Much](./Case-22-The-DNS-That-Spoke-Too-Much/) | DNS Logs, Splunk |
 | **#23** | [The Insider Who Wasn't](./Case-23-The-Insider-Who-Wasnt/) | Splunk, Badge Readers, Endpoint Forensics |
+| **#25** | [The Cracked Ticket: A Kerberoasting Attack](./Case-25-The-Cracked-Ticket/) | Windows Event Logs, Splunk |
+| **#27** | [The Innocent Permission: A Cloud IAM Escalation](./Case-27-The-Innocent-Permission/) | Cloud Audit Logs, IAM Policy Analysis |
+| **#28** | [The Look-Alike: A Phishing Campaign Hiding in Plain Sight](./Case-28-The-Look-Alike/) | Mail Audit Logs, Splunk, Domain Intelligence |
+| **#29** | [The Silent Listener: An ARP Poisoning Attack](./Case-29-The-Silent-Listener/) | tcpdump, ARP Analysis, Switch Logs |
 
 ### ⚫ Expert
 | Case | Incident Title | Primary Tools |
@@ -64,6 +76,8 @@ ends that came before the actual answer, not just the clean resolution.
 | **#08** | [Ghost Process: Hunting a Rootkit That Wasn't There](./Case-08-Ghost-Process/) | Linux Kernel Forensics, Live-Boot Analysis |
 | **#09** | [The Golden Ticket: A Domain Admin Who Was Never There](./Case-09-Golden-Ticket/) | Splunk, Windows Event Logs, Active Directory |
 | **#21** | [The Trusted Path: A Multi-Hop Lateral Movement Chain](./Case-21-The-Trusted-Path/) | Windows Event Logs, WinRM/SMB Telemetry |
+| **#24** | [Certified Pre-Owned: An AD CS Escalation](./Case-24-Certified-Pre-Owned/) | AD CS, PowerShell, Splunk |
+| **#26** | [The Open Cluster: An Exposed Kubernetes API Server](./Case-26-The-Open-Cluster/) | kubectl, K8s Audit Logs |
 
 ---
 
