@@ -24,7 +24,7 @@ a separate, clearly-labeled section kept entirely apart from the  archive.
 
 ## 📊 Series Overview
 
-**29 cases resolved** — 🟢 1 Beginner · 🟡 5 Intermediate · 🔴 18 Advanced · ⚫ 5 Expert
+**30 cases resolved** — 🟢 1 Beginner · 🟡 5 Intermediate · 🔴 19 Advanced · ⚫ 5 Expert
 
 ---
 
@@ -65,6 +65,7 @@ a separate, clearly-labeled section kept entirely apart from the  archive.
 | **#27** | [The Innocent Permission: A Cloud IAM Escalation](./Case-27-The-Innocent-Permission/) | Cloud Audit Logs, IAM Policy Analysis |
 | **#28** | [The Look-Alike: A Phishing Campaign Hiding in Plain Sight](./Case-28-The-Look-Alike/) | Mail Audit Logs, Splunk, Domain Intelligence |
 | **#29** | [The Silent Listener: An ARP Poisoning Attack](./Case-29-The-Silent-Listener/) | tcpdump, ARP Analysis, Switch Logs |
+| **#30** | [The Archive That Wouldn't Open: A Nested Encryption Evasion](https://github.com/rsone987/Red-Kingdom-DFIR-Cases/blob/main/Case-30-The-Archive-That-Wouldnt-Open) | NGFW DPI, Mail Gateway Logs, Threat Intel |
 
 ### ⚫ Expert
 | Case | Incident Title | Primary Tools |
